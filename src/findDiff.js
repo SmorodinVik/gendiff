@@ -1,12 +1,12 @@
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
 const readAndConvert = (pathToFile) => {
-    const absolutePath = path.resolve(pathToFile);
-    const fileData = fs.readFileSync(absolutePath);
-    const convetedData = JSON.parse(fileData);
-    return convetedData;
+  const absolutePath = path.resolve(pathToFile);
+  const fileData = fs.readFileSync(absolutePath);
+  const convetedData = JSON.parse(fileData);
+  return convetedData;
 };
 
 export default (path1, path2) => {
