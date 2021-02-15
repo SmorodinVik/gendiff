@@ -5,8 +5,8 @@ import path from 'path';
 const readAndConvert = (pathToFile) => {
   const absolutePath = path.resolve(pathToFile);
   const fileData = fs.readFileSync(absolutePath);
-  const convetedData = JSON.parse(fileData);
-  return convetedData;
+  const convertedData = JSON.parse(fileData);
+  return convertedData;
 };
 
 export default (path1, path2) => {
