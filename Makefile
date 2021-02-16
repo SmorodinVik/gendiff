@@ -5,4 +5,4 @@ try:
 lint:
 	npx eslint .
 test:
-	npm run test
+	npm test
