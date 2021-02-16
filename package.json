@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,8 @@
     "make": "^0.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.20.0"
+    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "eslint": "^7.20.0",
+    "jest": "^26.6.3"
   }
 }
