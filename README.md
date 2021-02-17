@@ -5,3 +5,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e94ec0ba1162932aa2b2/test_coverage)](https://codeclimate.com/github/SmorodinaVik/frontend-project-lvl2/test_coverage)
 ### First step:
 [![asciicast](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc.svg)](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc)
+### Second step:
+[![asciicast](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9.svg)](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9)
