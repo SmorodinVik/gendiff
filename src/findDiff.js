@@ -1,6 +1,4 @@
 // import * as _ from 'lodash';
-import fs from 'fs';
-import path from 'path';
 import readAndParse from './parsers.js';
 
 export default (path1, path2) => {

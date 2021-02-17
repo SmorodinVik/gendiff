@@ -10,7 +10,7 @@ describe.each([
   ['file3.yaml', 'file4.yml', 'yaml/yml'],
   ['file1.json', 'file4.yml', 'json/yml'],
 ])('Find differences:', (file1, file2, description) => {
-  test(description, () => {
+  test(`${description}`, () => {
     const path1 = getFixturePath(file1);
     const path2 = getFixturePath(file2);
     const result = findDiff(path1, path2);
