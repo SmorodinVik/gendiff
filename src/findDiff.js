@@ -1,17 +1,11 @@
 // import * as _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
-
-const readAndConvert = (pathToFile) => {
-  const absolutePath = path.resolve(pathToFile);
-  const fileData = fs.readFileSync(absolutePath);
-  const convertedData = JSON.parse(fileData);
-  return convertedData;
-};
+import readAndParse from './parsers.js';
 
 export default (path1, path2) => {
-  const data1 = readAndConvert(path1);
-  const data2 = readAndConvert(path2);
+  const data1 = readAndParse(path1);
+  const data2 = readAndParse(path2);
   const keys = Object.keys({ ...data1, ...data2 }).sort();
   const resultArray = keys.reduce((acc, key) => {
     const value1 = data1[key];
