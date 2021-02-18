@@ -1,7 +1,7 @@
 install:
 	npm install
 try:
-	gendiff /Users/Smorodina/Desktop/Projects/frontend-project-lvl2/testjsons/file5.json testjsons/file6.json
+	gendiff /Users/Smorodina/Desktop/Projects/frontend-project-lvl2/testjsons/file7.yml testjsons/file8.yaml
 lint:
 	npx eslint .
 test:
