@@ -1,25 +1,25 @@
-// import * as _ from 'lodash';
-import readAndParse from './parsers.js';
+import _ from 'lodash';
 
-export default (path1, path2) => {
-  const data1 = readAndParse(path1);
-  const data2 = readAndParse(path2);
-  const keys = Object.keys({ ...data1, ...data2 }).sort();
-  const resultArray = keys.reduce((acc, key) => {
-    const value1 = data1[key];
-    const value2 = data2[key];
+const findDiff = (obj1, obj2) => {
+  const keys = Object.keys({ ...obj1, ...obj2 }).sort();
+  const result = keys.reduce((acc, key) => {
+    const value1 = obj1[key];
+    const value2 = obj2[key];
     if (value1 === undefined) {
-      acc.push(`  + ${key}: ${value2}`);
+      acc.push({ key, value: value2, status: '+' });
     } else if (value2 === undefined) {
-      acc.push(`  - ${key}: ${value1}`);
+      acc.push({ key, value: value1, status: '-' });
     } else if (value1 === value2) {
-      acc.push(`    ${key}: ${value1}`);
+      acc.push({ key, value: value1, status: ' ' });
+    } else if (_.isObject(value1) && !_.isArray(value1) && _.isObject(value2) && !_.isArray(value2)) {
+      acc.push({ key, value: findDiff(value1, value2), status: ' ' });
     } else {
-      acc.push(`  - ${key}: ${value1}`);
-      acc.push(`  + ${key}: ${value2}`);
+      acc.push({ key, value: value1, status: '-' });
+      acc.push({ key, value: value2, status: '+' });
     }
     return acc;
   }, []);
-  const resultToString = `{\n${resultArray.join('\n')}\n}`;
-  return resultToString;
+  return result;
 };
+
+export default findDiff;

@@ -1,3 +1,4 @@
 node_modules
 /testjsons
 coverage
+.vscode
