@@ -7,3 +7,5 @@
 [![asciicast](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc.svg)](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc)
 ### Second step:
 [![asciicast](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9.svg)](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9)
+### Third step:
+[![asciicast](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE.svg)](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE)
