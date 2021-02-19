@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9.svg)](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9)
 ### Third step:
 [![asciicast](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE.svg)](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE)
+### Preview:
+[![asciicast](https://asciinema.org/a/9UYNvS1clauPcYydGFGEgBeLw.svg)](https://asciinema.org/a/9UYNvS1clauPcYydGFGEgBeLw)
