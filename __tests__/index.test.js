@@ -1,11 +1,9 @@
 import path from 'path';
-import findDiff from '../src/findDiff.js';
-import readAndParse from '../src/parsers.js';
-import stylish from '../src/stylish.js';
+import genDiff from '../src/index.js';
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const expected = `{
+const expectedStylish = `{
     common: {
       + follow: false
         setting1: Value 1
@@ -54,13 +52,11 @@ describe.each([
   ['file1.json', 'file2.json', 'json/json'],
   ['file3.yml', 'file4.yaml', 'yaml/yml'],
   ['file1.json', 'file4.yaml', 'json/yml'],
-])('Find differences:', (file1, file2, description) => {
+])('Test stylish:', (file1, file2, description) => {
   test(`${description}`, () => {
     const path1 = getFixturePath(file1);
     const path2 = getFixturePath(file2);
-    const data1 = readAndParse(path1);
-    const data2 = readAndParse(path2);
-    const result = findDiff(data1, data2);
-    expect(stylish(result)).toEqual(expected);
+    const result = genDiff(path1, path2, 'stylish');
+    expect(result).toEqual(expectedStylish);
   });
 });
