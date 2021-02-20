@@ -80,4 +80,3 @@ describe.each(testData)('Test stylish, plain, json:', (file1, file2, description
     expect(resultJSON).toEqual(expectedJSON);
   });
 });
-
