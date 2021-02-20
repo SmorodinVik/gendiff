@@ -7,12 +7,12 @@ const formatValue = (val) => {
   return _.isString(val) ? `'${val}'` : val;
 };
 
-const fn = (data, parents = '') => {
+const formatToPlain = (data, parents = '') => {
   const result = data.reduce((acc, current, i) => {
     const { key, value, status } = current;
     const keyWithParents = `${parents}${key}`;
 
-    if (status === '-') {
+    if (status === 'removed') {
       if (data[i + 1] && data[i + 1].key === key) {
         const oldValue = formatValue(value);
         const newValue = formatValue(data[i + 1].value);
@@ -20,17 +20,17 @@ const fn = (data, parents = '') => {
       } else {
         acc.push(`Property '${keyWithParents}' was removed`);
       }
-    } else if (status === '+') {
+    } else if (status === 'added') {
       if (data[i - 1] && data[i - 1].key === key) {
         return acc;
       }
       acc.push(`Property '${keyWithParents}' was added with value: ${formatValue(value)}`);
     } else if (_.isArray(value)) {
-      acc.push(fn(value, `${keyWithParents}.`));
+      acc.push(formatToPlain(value, `${keyWithParents}.`));
     }
     return acc;
   }, []).flat();
   return result.join('\n');
 };
 
-export default (dataTree) => fn(dataTree);
+export default (dataTree) => formatToPlain(dataTree);
