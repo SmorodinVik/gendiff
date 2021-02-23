@@ -1,13 +1,16 @@
+import _ from 'lodash';
 import stylish from './stylish.js';
 import plain from './plain.js';
 
-const mapping = {
+const formatter = {
   stylish,
   plain,
   json: JSON.stringify,
 };
 
 export default (data, format) => {
-  const formatter = mapping[format];
-  return formatter(data);
+  if (!_.has(formatter, format)) {
+    throw new Error(`Unknown format '${format}'.`);
+  }
+  return formatter[format](data);
 };
