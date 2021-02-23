@@ -72,7 +72,7 @@ describe.each(testData)('Test stylish, plain, json:', (file1, file2, description
   test(`${description}`, () => {
     const path1 = getFixturePath(file1);
     const path2 = getFixturePath(file2);
-    const resultStylish = genDiff(path1, path2, 'stylish');
+    const resultStylish = genDiff(path1, path2);
     const resultPlain = genDiff(path1, path2, 'plain');
     const resultJSON = genDiff(path1, path2, 'json');
     expect(resultStylish).toEqual(expectedStylish);

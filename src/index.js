@@ -4,7 +4,7 @@ import formatter from './formatters/index.js';
 import parser from './parsers.js';
 import buildDiffTree from './buildDiffTree.js';
 
-export default (path1, path2, format) => {
+export default (path1, path2, format = 'stylish') => {
   const extension1 = path.extname(path1);
   const absolutePath1 = path.resolve(path1);
   const fileData1 = fs.readFileSync(absolutePath1, 'utf-8');
