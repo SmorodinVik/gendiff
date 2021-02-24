@@ -1,35 +1,32 @@
 import _ from 'lodash';
 
 const formatValue = (val) => {
-  if (_.isArray(val)) {
+  if (_.isArray(val) || _.isObject(val)) {
     return '[complex value]';
   }
   return _.isString(val) ? `'${val}'` : val;
 };
 
 const formatToPlain = (data, parents = '') => {
-  const result = data.reduce((acc, current, i) => {
-    const { key, value, status } = current;
-    const keyWithParents = `${parents}${key}`;
-
-    if (status === 'removed') {
-      if (data[i + 1] && data[i + 1].key === key) {
-        const oldValue = formatValue(value);
-        const newValue = formatValue(data[i + 1].value);
-        acc.push(`Property '${keyWithParents}' was updated. From ${oldValue} to ${newValue}`);
-      } else {
-        acc.push(`Property '${keyWithParents}' was removed`);
+  const result = data
+    .filter(({ type }) => type !== 'no_changes')
+    .flatMap(({
+      type, key, oldValue, newValue, children,
+    }) => {
+      const keyWithParents = `${parents}${key}`;
+      const formattedOldValue = formatValue(oldValue);
+      const formattedNewValue = formatValue(newValue);
+      if (type === 'removed') {
+        return `Property '${keyWithParents}' was removed`;
       }
-    } else if (status === 'added') {
-      if (data[i - 1] && data[i - 1].key === key) {
-        return acc;
+      if (type === 'added') {
+        return `Property '${keyWithParents}' was added with value: ${formattedNewValue}`;
       }
-      acc.push(`Property '${keyWithParents}' was added with value: ${formatValue(value)}`);
-    } else if (_.isArray(value)) {
-      acc.push(formatToPlain(value, `${keyWithParents}.`));
-    }
-    return acc;
-  }, []).flat();
+      if (type === 'updated') {
+        return `Property '${keyWithParents}' was updated. From ${formattedOldValue} to ${formattedNewValue}`;
+      }
+      return formatToPlain(children, `${keyWithParents}.`);
+    });
   return result.join('\n');
 };
 
