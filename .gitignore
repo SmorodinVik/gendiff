@@ -2,3 +2,4 @@ node_modules
 /testjsons
 coverage
 .vscode
+.DS_Store
