@@ -16,16 +16,18 @@ const formatToPlain = (data, parents = '') => {
       const keyWithParents = `${parents}${key}`;
       const formattedOldValue = formatValue(oldValue);
       const formattedNewValue = formatValue(newValue);
-      if (type === 'removed') {
-        return `Property '${keyWithParents}' was removed`;
+      switch (type) {
+        case 'removed':
+          return `Property '${keyWithParents}' was removed`;
+        case 'added':
+          return `Property '${keyWithParents}' was added with value: ${formattedNewValue}`;
+        case 'updated':
+          return `Property '${keyWithParents}' was updated. From ${formattedOldValue} to ${formattedNewValue}`;
+        case 'changed':
+          return formatToPlain(children, `${keyWithParents}.`);
+        default:
+          throw new Error(`Unknown type: '${type}'!`);
       }
-      if (type === 'added') {
-        return `Property '${keyWithParents}' was added with value: ${formattedNewValue}`;
-      }
-      if (type === 'updated') {
-        return `Property '${keyWithParents}' was updated. From ${formattedOldValue} to ${formattedNewValue}`;
-      }
-      return formatToPlain(children, `${keyWithParents}.`);
     });
   return result.join('\n');
 };

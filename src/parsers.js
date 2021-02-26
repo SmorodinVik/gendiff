@@ -8,6 +8,5 @@ const mapping = {
 
 export default (data, extension) => {
   const parser = mapping[extension];
-  const parsedData = parser(data);
-  return parsedData;
+  return parser(data);
 };
