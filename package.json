@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/SmorodinaVik/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/SmorodinaVik/frontend-project-lvl2/actions)",
+  "description": "Utility for finding differences in configuration files",
   "bin": {
     "gendiff": "bin/genDiff.js"
   },
