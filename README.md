@@ -32,13 +32,7 @@ Options:
  ### Usage
  Available output formats: `stylish (default), plain, json`.
  
-## How it works:
+### How it works:
+##### plain output -> stylish output -> json output
+
 [![asciicast](https://asciinema.org/a/N29Rl4PGLe1EeGu4235KBkqOM.svg)](https://asciinema.org/a/N29Rl4PGLe1EeGu4235KBkqOM)
-### First step:
-[![asciicast](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc.svg)](https://asciinema.org/a/1nsajLN5yWfj6M5FoWgWmgncc)
-### Second step:
-[![asciicast](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9.svg)](https://asciinema.org/a/F9j3jfPRGSg3IflN791LvQoS9)
-### Third step:
-[![asciicast](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE.svg)](https://asciinema.org/a/2swxsiw0XgbAWJreSuY9JCvgE)
-### Preview:
-[![asciicast](https://asciinema.org/a/9UYNvS1clauPcYydGFGEgBeLw.svg)](https://asciinema.org/a/9UYNvS1clauPcYydGFGEgBeLw)
