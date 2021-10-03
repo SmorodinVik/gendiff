@@ -1,6 +1,6 @@
 ## Generator of differences
 ![Linter](https://github.com/SmorodinaVik/frontend-project-lvl2/workflows/Linter/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/e94ec0ba1162932aa2b2/maintainability)](https://codeclimate.com/github/SmorodinaVik/frontend-project-lvl2/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a41b4dc424e4849c7642/maintainability)](https://codeclimate.com/github/SmorodinaVik/gendiff/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a41b4dc424e4849c7642/test_coverage)](https://codeclimate.com/github/SmorodinaVik/gendiff/test_coverage)
 
 *Utility for finding differences in configuration files*
