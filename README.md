@@ -1,4 +1,4 @@
-## Generator of differences
+# Generator of differences
 ![Linter](https://github.com/SmorodinaVik/frontend-project-lvl2/workflows/Linter/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a41b4dc424e4849c7642/maintainability)](https://codeclimate.com/github/SmorodinaVik/gendiff/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a41b4dc424e4849c7642/test_coverage)](https://codeclimate.com/github/SmorodinaVik/gendiff/test_coverage)
